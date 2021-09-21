@@ -1,4 +1,5 @@
 ﻿using CinemaBooking.MauiBlazor.Data;
+using CinemaBooking.MauiBlazor.Services;
 using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
@@ -21,6 +22,7 @@ namespace CinemaBooking.MauiBlazor
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
+            builder.Services.AddTransient<ICinemaRoomRepository, CinemaRoomRepositoryMock>();
             builder.Services.AddBlazorWebView();
             builder.Services.AddSingleton<WeatherForecastService>();
 
