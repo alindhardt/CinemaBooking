@@ -9,7 +9,7 @@ namespace CinemaBooking.MauiBlazor.Data
     public class SeatModel
     {
         public SeatStatus SeatStatus { get; set; }
-        public int RowNumber { get; set; }
+        public string RowName { get; set; }
         public int SeatNumber { get; set; }
     }
 }

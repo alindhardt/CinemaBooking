@@ -16,14 +16,18 @@ namespace CinemaBooking.MauiBlazor.Services
             var rand = new Random();
 
             var list = new List<SeatModel>();
+            var rows = new string[] { "A", "B", "C", "D", "E" };
 
-            for (int r = 1; r < 5; r++)
+            foreach (var row in rows)
             {
                 for (int sn = 1; sn < 11; sn++)
                 {
-                    list.Add(new SeatModel { RowNumber = r, SeatNumber = sn, SeatStatus = RandomSeatStatus(rand) });
+                    list.Add(new SeatModel { RowName = row, SeatNumber = sn, SeatStatus = RandomSeatStatus(rand) });
                 }
             }
+
+                
+
             return list;
         }
 
