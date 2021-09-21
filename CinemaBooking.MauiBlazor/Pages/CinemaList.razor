@@ -1,0 +1,23 @@
+﻿@page "/cinemalist"
+
+<h3>Biografer</h3>
+
+<div class="row">
+    @foreach (var cinema in Cinemas)
+    {
+        <div class="col-md-4" style="margin-bottom:5px">
+            <div class="card">
+                <img src="https://www.recordere.dk/2015/03/articlefiles/12392-Nordisk%20Film%20Biografer%20500.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">@cinema.Name</h5>
+                    <h6 class="card-subtitle text-muted">@cinema.City</h6>
+                    <p class="card-text">@cinema.Address</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+
+}
