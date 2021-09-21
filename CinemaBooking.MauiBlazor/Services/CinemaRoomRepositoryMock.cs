@@ -15,29 +15,16 @@ namespace CinemaBooking.MauiBlazor.Services
 
             var rand = new Random();
 
-            return new List<SeatModel>
+            var list = new List<SeatModel>();
+
+            for (int r = 1; r < 5; r++)
             {
-                new SeatModel { RowNumber = 1, SeatNumber = 1, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 2, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 3, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 4, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 5, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 6, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 7, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 8, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 9, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 1, SeatNumber = 10, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 1, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 2, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 3, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 4, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 5, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 6, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 7, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 8, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 9, SeatStatus = RandomSeatStatus(rand) },
-                new SeatModel { RowNumber = 2, SeatNumber = 10, SeatStatus = RandomSeatStatus(rand) }
-            };
+                for (int sn = 1; sn < 11; sn++)
+                {
+                    list.Add(new SeatModel { RowNumber = r, SeatNumber = sn, SeatStatus = RandomSeatStatus(rand) });
+                }
+            }
+            return list;
         }
 
         /// <summary>
