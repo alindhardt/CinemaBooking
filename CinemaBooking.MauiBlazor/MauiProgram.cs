@@ -22,7 +22,7 @@ namespace CinemaBooking.MauiBlazor
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
-            builder.Services.AddTransient<ICinemaRoomRepository, CinemaRoomRepositoryMock>();
+            builder.Services.AddTransient<ICinemaRoomRepository, Services.Mocks.CinemaRoomRepositoryMock>();
             builder.Services.AddBlazorWebView();
             builder.Services.AddSingleton<WeatherForecastService>();
 

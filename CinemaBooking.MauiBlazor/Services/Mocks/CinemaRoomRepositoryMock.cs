@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaBooking.MauiBlazor.Services
+namespace CinemaBooking.MauiBlazor.Services.Mocks
 {
     public class CinemaRoomRepositoryMock : ICinemaRoomRepository
     {
