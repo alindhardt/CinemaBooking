@@ -1,0 +1,17 @@
+﻿@page "/defaultcenteredroom"
+<h3>DefaultCentered</h3>
+
+<h3>Sæde vælger</h3>
+<h4>Antal sæder valgt: @NumberOfSeatsPicked</h4>
+<div style="padding:20px; overflow:auto; white-space: nowrap">
+
+    @foreach (var rowNumber in Seats.Select(s => s.RowNumber).Distinct())
+    {
+        <div style="display:block">
+            @foreach (var seat in Seats.Where(s => s.RowNumber == rowNumber))
+            {
+                <Seat Model=seat OnSeatStatusChanged=UpdateNumberOfSeatsPicked />
+            }
+        </div>
+    }
+</div>
