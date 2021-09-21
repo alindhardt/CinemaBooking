@@ -1,0 +1,27 @@
+﻿<div @onclick="ToggleSeatStatus" style="
+    margin: 5px;
+    display: inline-block;
+    border-radius: @BorderRadius;
+    width: @Width;
+    height: @Height;
+    background-color: @Color;
+    color: white;">
+
+    <div style="
+        height: 35%;
+        background-color: black;
+        border-radius: @BorderRadius @BorderRadius 0px 0px;
+        text-align: center;">
+        @Model.RowNumber
+    </div>
+    
+    <div style="
+        height: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        font-weight: bolder">
+        @Model.SeatNumber
+    </div>
+</div>
