@@ -31,6 +31,31 @@
         "Charlotte Rampling"
       ],
       "Rating": 8.5
+    },
+    {
+      "Id": 2,
+      "Name": "No Time to Die",
+      "Descriptions": [
+        "\"The name is Bond, James Bond\", denne sætning får nu sin plads i den 25. film om Agent 007, 'No Time To Die'.",
+        "Bond er stoppet som aktiv agent hos MI6, og nyder det afslappende liv på Jamaica. Freden bliver dog afbrudt, da hans gamle ven Felix Leiter fra CIA dukker op og beder om hjælp. Missionen handler om at finde en kidnappet videnskabsmand, men det hele viser sig at være langt mere forræderisk end ventet. Agent 007 kommer i stedet på sporet af en mystisk skurk, som er bevæbnet med en farlig ny teknologi.",
+        "Daniel Craig vender tilbage som Bond for femte og sidste gang i 'No Time To Die'."
+      ],
+      "PosterImage": "https://www.nfbio.dk/sites/nfbio.dk/files/styles/movie_poster/public/media-images/2021-05/bond.jpeg?itok=PqAKwYmM",
+      "Categories": [
+        "Action"
+      ],
+      "Director": "Cary Joji Fukunaga",
+      "FilmType": "2D",
+      "PremiereDate": "2021-9-30",
+      "PlayTime": "2:43",
+      "Stars": [
+        "Daniel Craig",
+        "Ana de Armas",
+        "Rami Malek",
+        "Ralph Fiennes",
+        "Chritoph Waltz"
+      ],
+      "Rating": 0
     }
   ]
 }
