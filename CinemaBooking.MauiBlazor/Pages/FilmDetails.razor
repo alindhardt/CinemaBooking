@@ -1,53 +1,65 @@
 ﻿@page "/filmtest"
-<div class="row">
-    <div class="col-xl-4">
-        <img src="@Film.PosterImage"/ style="
-            width:100%;
-            max-width:500px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-            margin-bottom: 10px">
-    </div>
-    <div class="col-xl-8">
-        <div class="row">
-            <h1 class="col-xl-8" style="margin-bottom: 0.5rem;
-                font-family: var(--ipt-font-family);
-                font-weight: var(--ipt-type-headline3-weight,400);
-                letter-spacing: var(--ipt-type-headline3-letterSpacing,normal);
-                text-transform: var(--ipt-type-headline3-textTransform,none);
-                font-size: @TitleFontSize;
-                line-height: 3.125rem;">
-                @Film.Name
-            </h1>
-            <div class="col-xl-4">
-                <div>
-                    <div><b>Premiere</b> <span style="white-space: nowrap;">@DanishPremiere</span></div>
-                    <div><b>Varighed</b> <span style="white-space: nowrap;">@Film.PlayTime.Hours timer @Film.PlayTime.Minutes min</span></div>
-                </div>
-                
-            </div>
-        </div>
-        
-        @if (Film.Descriptions is not null && Film.Descriptions.Length > 0)
-        {
-            <p>@Film.Descriptions.First()</p>
 
-            if (Film.Descriptions.Length > 1)
+@if (Film is null)
+{
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <p>Loading....</p>
+}
+else
+{
+    <div class="row">
+        <div class="col-xl-4">
+            <img src="@Film.PosterImage"/ style="
+                width:100%;
+                max-width:500px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                margin-bottom: 10px">
+        </div>
+        <div class="col-xl-8">
+            <div class="row">
+                <h1 class="col-xl-8" style="margin-bottom: 0.5rem;
+                    font-family: var(--ipt-font-family);
+                    font-weight: var(--ipt-type-headline3-weight,400);
+                    letter-spacing: var(--ipt-type-headline3-letterSpacing,normal);
+                    text-transform: var(--ipt-type-headline3-textTransform,none);
+                    font-size: @TitleFontSize;
+                    line-height: 3.125rem;">
+                    @Film.Name
+                </h1>
+                <div class="col-xl-4">
+                    <div>
+                        <div><b>Premiere</b> <span style="white-space: nowrap;">@DanishPremiere</span></div>
+                        <div><b>Varighed</b> <span style="white-space: nowrap;">@Film.PlayTime.Hours timer @Film.PlayTime.Minutes min</span></div>
+                    </div>
+                
+                </div>
+            </div>
+        
+            @if (Film.Descriptions is not null && Film.Descriptions.Length > 0)
             {
-                if (DescriptionExpanded)
+                <p>@Film.Descriptions.First()</p>
+
+                if (Film.Descriptions.Length > 1)
                 {
-                    @foreach (var desc in Film.Descriptions.Skip(1))
+                    if (DescriptionExpanded)
                     {
-                        <p>@desc</p>
+                        @foreach (var desc in Film.Descriptions.Skip(1))
+                        {
+                            <p>@desc</p>
+                        }
+                        <button class="btn btn-primary" @onclick=ToggleDescriptionExpanded>Vis mindre<span class="oi oi-chevron-top"></span></button>
                     }
-                    <button class="btn btn-primary" @onclick=ToggleDescriptionExpanded>Vis mindre<span class="oi oi-chevron-top"></span></button>
-                }
-                else
-                {
-                    <button class="btn btn-primary" @onclick=ToggleDescriptionExpanded>Vis mere<span class="oi oi-chevron-bottom"></span></button>
+                    else
+                    {
+                        <button class="btn btn-primary" @onclick=ToggleDescriptionExpanded>Vis mere<span class="oi oi-chevron-bottom"></span></button>
+                    }
                 }
             }
-        }
+        </div>
     </div>
-</div>
+    
+}

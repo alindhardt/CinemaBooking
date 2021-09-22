@@ -23,6 +23,7 @@ namespace CinemaBooking.MauiBlazor
                 });
 
             builder.Services.AddTransient<ICinemaRoomRepository, Services.Mocks.CinemaRoomRepositoryMock>();
+            builder.Services.AddTransient<IFilmRepository, Services.Mocks.FilmRepositoryMock>();
             builder.Services.AddBlazorWebView();
             builder.Services.AddSingleton<WeatherForecastService>();
 
