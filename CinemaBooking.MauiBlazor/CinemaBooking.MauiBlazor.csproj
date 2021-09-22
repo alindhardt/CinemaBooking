@@ -52,7 +52,6 @@
 
 	<ItemGroup>
 		<Content Remove="Properties\launchSettings.json" />
-		<Content Remove="Services\Mocks\films.json" />
 	</ItemGroup>
 
 </Project>

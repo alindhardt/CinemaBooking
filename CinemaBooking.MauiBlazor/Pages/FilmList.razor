@@ -1,0 +1,29 @@
+﻿@page "/filmlist"
+
+@if (Films is null)
+{
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <p>Loading....</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var film in Films)
+        {
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="card" style="max-width:430px;margin-bottom:5px;">
+                    <img src="@film.PosterImage" class="card-img-top" alt="@film.Name plakat">
+                    <div class="card-body">
+                        <h5 class="card-title">@film.Name</h5>
+                        <div><b>Varighed</b> <span style="white-space: nowrap;">@film.PlayTime.Hours timer @film.PlayTime.Minutes min</span></div>
+                        <a href="filmdetails/@film.Id" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            
+        }
+    </div>
+    
+}

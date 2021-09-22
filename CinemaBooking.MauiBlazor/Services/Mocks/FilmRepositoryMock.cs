@@ -13,17 +13,23 @@ namespace CinemaBooking.MauiBlazor.Services.Mocks
     {
         public async Task<List<FilmModel>> GetFilmsAsync()
         {
-            await Task.Delay(150);
+            try
+            {
+                using var stream = await Microsoft.Maui.Essentials.FileSystem.OpenAppPackageFileAsync("films.json");
 
-            using var stream = await Microsoft.Maui.Essentials.FileSystem.OpenAppPackageFileAsync("films.json");
+                using var reader = new StreamReader(stream);
 
-            using var reader = new StreamReader(stream);
-                
-            var fileContents = await reader.ReadToEndAsync();
+                var fileContents = await reader.ReadToEndAsync();
 
-            var result = JsonConvert.DeserializeObject<FilmsJsonResult>(fileContents);
+                var result = JsonConvert.DeserializeObject<FilmsJsonResult>(fileContents);
 
-            return result.Films;
+                return result.Films;
+            }
+            catch (Exception ex)
+            {
+                return new List<FilmModel>();
+            }
+            
         }
 
         public async Task<List<FilmModel>> GetFilmsAsync(Func<FilmModel, bool> predicate)

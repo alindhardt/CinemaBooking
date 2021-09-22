@@ -14,6 +14,8 @@ namespace CinemaBooking.MauiBlazor.Pages
     {
         [Inject]
         public IFilmRepository FilmRepository { get; set; }
+        [Parameter]
+        public int Id { get; set; }
 
         [Parameter]
         public FilmModel Film { get; set; }
@@ -58,17 +60,9 @@ namespace CinemaBooking.MauiBlazor.Pages
             return length;
         }
 
-        async Task TestAsync()
-        {
-            var films = await FilmRepository.GetFilmsAsync();
-        }
-
         protected async override Task OnInitializedAsync()
         {
-            if (Film is null)
-            {
-                Film = await FilmRepository.GetFilmByIdAsync(1);
-            }
+            Film = await FilmRepository.GetFilmByIdAsync(Id);
         }
     }
 }
