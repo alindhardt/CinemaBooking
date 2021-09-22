@@ -9,7 +9,26 @@ namespace CinemaBooking.MauiBlazor.Services.Mocks
 {
     public class CinemaRoomRepositoryMock : ICinemaRoomRepository
     {
-        public async Task<List<SeatModel>> GetSeatsFromRoom(int cinemaId, int roomId, DateTime startTime)
+        public List<SeatModel> GetSeatsFromRoom(int cinemaId, int roomId, DateTime filmStartTime)
+        {
+            var rand = new Random();
+
+            var list = new List<SeatModel>();
+            var rows = new string[] { "A", "B", "C", "D", "E" };
+
+            foreach (var row in rows)
+            {
+                for (int sn = 1; sn < 11; sn++)
+                {
+                    list.Add(new SeatModel { RowName = row, SeatNumber = sn, SeatStatus = RandomSeatStatus(rand) });
+                }
+            }
+
+
+
+            return list;
+        }
+        public async Task<List<SeatModel>> GetSeatsFromRoomAsync(int cinemaId, int roomId, DateTime filmStartTime)
         {
             await Task.Delay(500);
 

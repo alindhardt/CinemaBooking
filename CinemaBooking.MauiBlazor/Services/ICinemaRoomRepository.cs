@@ -8,6 +8,7 @@ namespace CinemaBooking.MauiBlazor.Services
     public interface ICinemaRoomRepository
 
     {
-        Task<List<SeatModel>> GetSeatsFromRoom(int CinemaId, int roomId, DateTime startTime);
+        List<SeatModel> GetSeatsFromRoom(int cinemaId, int roomId, DateTime filmStartTime);
+        Task<List<SeatModel>> GetSeatsFromRoomAsync(int CinemaId, int roomId, DateTime filmStartTime);
     }
 }

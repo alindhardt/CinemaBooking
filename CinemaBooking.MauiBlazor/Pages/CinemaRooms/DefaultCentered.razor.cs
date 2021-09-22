@@ -19,7 +19,7 @@ namespace CinemaBooking.MauiBlazor.Pages.CinemaRooms
 
         protected override async Task OnInitializedAsync()
         {
-            Seats = await CinemaRoomRepository.GetSeatsFromRoom(1, 1, DateTime.Now);
+            Seats = await CinemaRoomRepository.GetSeatsFromRoomAsync(1, 1, DateTime.Now);
         }
 
         void UpdateNumberOfSeatsPicked()
