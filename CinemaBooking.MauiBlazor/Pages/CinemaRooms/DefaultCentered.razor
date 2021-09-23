@@ -14,15 +14,23 @@
 <h3>Sæde vælger</h3>
 <h4>Antal sæder valgt: @NumberOfSeatsPicked</h4>
 <div style="padding:20px; overflow:auto; white-space: nowrap">
-
-    @foreach (var rowNumber in Seats.Select(s => s.RowName).Distinct())
-    {
-        <div class="seat-row">
-            @foreach (var seat in Seats.Where(s => s.RowName == rowNumber))
-            {
-                <Seat Model=seat OnSeatStatusChanged=UpdateNumberOfSeatsPicked />
-            }
+    <div style="display:inline-block">
+        <div class="row">
+            <div class="col-8 mx-auto" style="
+                border-top: 15px solid gray !important;
+                border-left: 25px solid transparent !important;
+                border-right: 25px solid transparent !important;
+                margin-bottom: 5px;"></div>
         </div>
-    }
+        @foreach (var rowNumber in Seats.Select(s => s.RowName).Distinct())
+        {
+            <div class="seat-row">
+                @foreach (var seat in Seats.Where(s => s.RowName == rowNumber))
+                {
+                    <Seat Model=seat OnSeatStatusChanged=UpdateNumberOfSeatsPicked />
+                }
+            </div>
+        }
+    </div>
 </div>
 
