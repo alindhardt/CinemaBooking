@@ -1,0 +1,25 @@
+﻿@if (ShowTimes is null)
+{
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <p>Loading....</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var date in ColumnDates)
+        {
+            <div class="col-3 text-center" style="border-right: 1px solid gray">
+                <b>@date.DayOfWeek @date.ToString("dd/MM")</b>
+
+                @foreach (var time in ShowTimes.Where(st => st.Date == date.Date))
+                {
+                    <div class="row">
+                        <button class="col btn btn-large btn-primary" @onclick="() => TimeSelected(time)">@time.ToString("HH:mm")</button>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}
