@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaBooking.MauiBlazor.Data
 {
-    public class Auditorium
+    public class AuditoriumModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
