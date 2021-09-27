@@ -19,29 +19,6 @@ namespace CinemaBooking.MauiBlazor.Pages
         protected override async Task OnInitializedAsync()
         {
             Cinemas = await CinemaRepository.GetCinemasAsync();
-//            await Task.Delay(150);
-
-//            Cinemas = new List<CinemaModel>()
-//            {
-//                new CinemaModel
-//                {
-//                    Name = "NORDISK FILM BIOGRAFER FIELDS",
-//                    City = "København",
-//                    Country = "Danmark",
-//                    Address = @"Nordisk Film Biografer Field's
-//Ørestads Boulevard 102A
-//2300 København S"
-//                },
-//                new CinemaModel
-//                {
-//                    Name = "NORDISK FILM BIOGRAFER VIBORG FOTORAMA",
-//                    City = "Viborg",
-//                    Country = "Danmark",
-//                    Address = @"Tingvej 4
-
-//8800 Viborg"
-//                }
-//            };
         }
     }
 }

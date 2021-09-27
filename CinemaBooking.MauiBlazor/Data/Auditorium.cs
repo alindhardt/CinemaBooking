@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace CinemaBooking.MauiBlazor.Data
 {
-    public class CinemaModel
+    public class Auditorium
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-        public string Address { get; set; }
-        public List<Auditorium> Auditoriums { get; set; }
+        public int Rows { get; set; }
+        public int TotalNumberOfSeats { get; set; }
+        public List<SeatModel> Seats { get; set; }
     }
 }

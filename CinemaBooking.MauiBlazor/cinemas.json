@@ -5,21 +5,81 @@
       "Name": "NORDISK FILM BIOGRAFER FIELDS",
       "City": "København",
       "Country": "Danmark",
-      "Address": "Nordisk Film Biografer Field's \n\n Ørestads Boulevard 102A \n\n 2300 København S"
+      "Address": "Nordisk Film Biografer Field's \n\n Ørestads Boulevard 102A \n\n 2300 København S",
+      "Auditoriums": [
+        {
+          "Id": 1,
+          "Name": "Biograf 1",
+          "Rows": 8,
+          "TotalNumberOfSeats": 176
+        },
+        {
+          "Id": 2,
+          "Name": "Biograf 2",
+          "Rows": 8,
+          "TotalNumberOfSeats": 176
+        },
+        {
+          "Id": 3,
+          "Name": "Biograf 3",
+          "Rows": 8,
+          "TotalNumberOfSeats": 176
+        }
+      ]
     },
     {
       "Id": 2,
       "Name": "Palads",
       "City": "København",
       "Contry": "Danmark",
-      "Address": "Nordisk Film Biografer Palads \n\n Axeltorv 9 \n\n 1609 København V"
+      "Address": "Nordisk Film Biografer Palads \n\n Axeltorv 9 \n\n 1609 København V",
+      "Auditoriums": [
+        {
+          "Id": 4,
+          "Name": "Biograf 1",
+          "Rows": 10,
+          "TotalNumberOfSeats": 220
+        },
+        {
+          "Id": 5,
+          "Name": "Biograf 2",
+          "Rows": 10,
+          "TotalNumberOfSeats": 220
+        },
+        {
+          "Id": 6,
+          "Name": "Biograf 3",
+          "Rows": 10,
+          "TotalNumberOfSeats": 220
+        }
+      ]
     },
     {
       "Id": 3,
       "Name": "NORDISK FILM BIOGRAFER VIBORG FOTORAMA",
       "City": "Viborg",
       "Country": "Danmark",
-      "Address": "Tingvej 4 \n\n 8800 Viborg"
+      "Address": "Tingvej 4 \n\n 8800 Viborg",
+      "Auditoriums": [
+        {
+          "Id": 7,
+          "Name": "Biograf 1",
+          "Rows": 10,
+          "TotalNumberOfSeats": 220
+        },
+        {
+          "Id": 8,
+          "Name": "Biograf 2",
+          "Rows": 10,
+          "TotalNumberOfSeats": 220
+        },
+        {
+          "Id": 9,
+          "Name": "Biograf 3",
+          "Rows": 10,
+          "TotalNumberOfSeats": 220
+        }
+      ]
     }
   ]
 }
